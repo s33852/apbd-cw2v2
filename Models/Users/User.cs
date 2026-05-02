@@ -1,6 +1,6 @@
 namespace APBD_TASK2.Models.Users
 {
-    internal abstract class User
+    public abstract class User
     {
         public int Id { get; }
         public string FirstName { get; }
@@ -23,7 +23,7 @@ namespace APBD_TASK2.Models.Users
             $"[{Id}] {GetUserType()}: {FullName} (max rentals: {MaxActiveRentals})";
     }
 
-    internal class Student : User
+    public class Student : User
     {
         public string StudentId { get; }
 
@@ -40,7 +40,7 @@ namespace APBD_TASK2.Models.Users
             $"[{Id}] Student: {FullName} | Index: {StudentId} | Max rentals: {MaxActiveRentals}";
     }
 
-    internal class Employee : User
+    public class Employee : User
     {
         public string Department { get; }
 

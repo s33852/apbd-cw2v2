@@ -1,13 +1,14 @@
-using apbd_cw2.Database.Equipment;
+using APBD_TASK2.Database;
 using APBD_TASK2.Models.Users;
+using EquipmentBase = APBD_TASK2.Models.Equipment.Equipment;
 
 namespace APBD_TASK2.Models
 {
-    internal class Rental
+    public class Rental
     {
         public int Id { get; }
         public User User { get; }
-        public Equipment Equipment { get; }
+        public EquipmentBase Equipment { get; }
         public DateTime RentedAt { get; }
         public DateTime DueDate { get; }
         public DateTime? ReturnedAt { get; private set; }
@@ -18,7 +19,7 @@ namespace APBD_TASK2.Models
 
         private static int _nextId = 1;
 
-        public Rental(User user, Equipment equipment, DateTime rentedAt, int rentalDays)
+        public Rental(User user, EquipmentBase equipment, DateTime rentedAt, int rentalDays)
         {
             Id = _nextId++;
             User = user;

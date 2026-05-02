@@ -1,14 +1,16 @@
-using apbd_cw2.Database.Equipment;
+using APBD_TASK2.Models;         
+using Equipment = APBD_TASK2.Models.Equipment.Equipment;
 using APBD_TASK2.Models.Users;
+using APBD_TASK2.Database;
 
-namespace APBD_TASK2.Models.Services
+namespace APBD_TASK2.Services
 {
     internal class RentalService
     {
         private const decimal PenaltyPerDay = 10.00m;
         private const int DefaultRentalDays = 7;
 
-        // Shortcut to the singleton data
+    
         private List<Equipment> Equipment => Singleton.Instance.Equipment;
         private List<User> Users => Singleton.Instance.Users;
         private List<Rental> Rentals => Singleton.Instance.Rentals;
